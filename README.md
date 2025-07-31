@@ -34,15 +34,15 @@ docker volume rm n8n_data
 #### n8n Server
 1. Create: 
 ```bash
-docker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n
+docker run -d --name n8n --restart unless-stopped -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/
 ```
 2. Inspect
 ```bash
-docker ps
+docker ps | grep n8n
 ```
 3. Delete
 ```bash
-docker stop n8n
+docker stop n8n && docker rm n8n
 ```
 
 
