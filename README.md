@@ -12,7 +12,7 @@ docker volume create n8n_data
 ```
 and then run:
 ```bash
-docker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n
+docker run -d --name n8n --restart unless-stopped -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n
 ```
 open borswer and go to http://localhost:5678
 
