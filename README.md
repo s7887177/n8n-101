@@ -19,7 +19,7 @@ docker volume create n8n_data
 ### 4. Install n8n Image and Run
 `Win` + `R` and run `wsl`.
 ```bash
-docker run -it --rm \
+docker run -it -d \
  --name n8n \
  -p 5678:5678 \
  -e GENERIC_TIMEZONE=Asia/Taipei \
@@ -27,5 +27,6 @@ docker run -it --rm \
  -e N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true \
  -e N8N_RUNNERS_ENABLED=true \
  -v n8n_data:/home/node/.n8n \
+ --restart unless-stopped \
  docker.n8n.io/n8nio/n8n
 ```
